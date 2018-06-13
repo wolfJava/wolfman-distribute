@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:spring="http://www.springframework.org/schema/tool"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
        http://code.alibabatech.com/schema/dubbo
-       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
 
+    <!-- 增加注解扫描配置 -->
+    <context:annotation-config />
+
+    <!-- 扫描注解路径 -->
+    <context:component-scan base-package="com.wolfman.dubbo.provider" />
 
 <!--当前项目在整个分布式架构里面的唯一名称，计算依赖关系的标签-->
     <dubbo:application name="dubbo-provider" owner="huhao"/>
@@ -24,14 +32,18 @@
     <dubbo:protocol name="dubbo" port="20880"/>
 
     <!--增加hession协议-->
-    <dubbo:protocol name="hessian" port="8090" server="jetty"/>
+    <!--<dubbo:protocol name="hessian" port="8090" server="jetty"/>-->
 
     <!--服务发布的配置，需要暴露的服务接口-->
     <!-- 多协议支持 -->
+    <!--<dubbo:service async="true" interface="com.wolfman.dubbo.api.IHelloWorldService"
+            ref="helloWorldService" protocol="hessian,dubbo"/>-->
+    <!-- async属性：可以异步回掉获取数据 async="true" -->
+    <!-- timeout属性：超时属性，服务提供连接多长时间后超时 timeout="20" -->
     <dubbo:service interface="com.wolfman.dubbo.api.IHelloWorldService"
-            ref="helloWorldService" protocol="hessian,dubbo"/>
+                   ref="helloWorldService" protocol="dubbo"/>
 
     <!--Bean bean定义-->
-    <bean id="helloWorldService" class="com.wolfman.dubbo.provider.HelloWorldServiceImpl"/>
+    <!--<bean id="helloWorldService" class="com.wolfman.dubbo.provider.HelloWorldServiceImpl"/>-->
 
 </beans>

@@ -11,12 +11,34 @@
     <packaging>jar</packaging>
 
     <artifactId>dubbo-single-provider</artifactId>
+        <dependencies>
+            <dependency>
+            <groupId>com.wolfman.distribute</groupId>
+            <artifactId>dubbo-api</artifactId>
+        </dependency>
 
-    <dependencies>
+        <!--Spring-->
         <dependency>
-        <groupId>com.wolfman.distribute</groupId>
-        <artifactId>dubbo-api</artifactId>
-    </dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
