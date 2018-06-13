@@ -16,10 +16,16 @@
 
     <!--dubbo这个服务所要暴露的服务地址所对应的注册中心-->
     <!-- zookeeper通信 -->
-    <dubbo:registry protocol="zookeeper" address="39.107.31.208:2181,39.107.32.43:2181,47.95.39.176:2181"/>
+    <dubbo:registry  protocol="zookeeper" address="39.107.31.208:2181,39.107.32.43:2181,47.95.39.176:2181"/>
 
     <!--生成一个远程服务的调用代理-->
-    <dubbo:reference id="orderServices" interface="com.wolfman.dubbo.api.IHelloWorldService"
-    	url="dubbo://169.254.44.198:20880/com.wolfman.dubbo.api.IHelloWorldService"/>
+    <!-- 单点通信 -->
+    <!--<dubbo:reference id="orderServices" interface="com.wolfman.dubbo.api.IHelloWorldService"
+    	url="dubbo://169.254.44.198:20880/com.wolfman.dubbo.api.IHelloWorldService"/>-->
+
+    <!--生成一个远程服务的调用代理-->
+    <!-- zookeeper通信 -->
+    <!-- check属性：启动服务检查，默认为true。检查提供方是否已经提供了服务，没有任何提供方，则会报错。  -->
+    <dubbo:reference id="orderServices" interface="com.wolfman.dubbo.api.IHelloWorldService" protocol="hessian"/>
 
 </beans>

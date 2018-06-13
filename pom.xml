@@ -9,8 +9,37 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>distribute-zookeeper</module>
+        <module>distribute-dubbo</module>
     </modules>
     <packaging>pom</packaging>
 
+    <properties>
+        <project-version>${project.version}</project-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <java.version>1.8</java.version>
+        <java.encoding>UTF-8</java.encoding>
+        <druid.version>1.0.9</druid.version>
+        <spring.boot.dubbo.version>1.0.0</spring.boot.dubbo.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${java.encoding}</encoding>
+                    <compilerArguments>
+                        <extdirs>lib</extdirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -1,4 +1,7 @@
 package com.wolfman.dubbo.api;
 
-public interface IHelloWorld {
+public interface IHelloWorldService {
+
+    DoResponse sayHello(DoRequest request);
+
 }
