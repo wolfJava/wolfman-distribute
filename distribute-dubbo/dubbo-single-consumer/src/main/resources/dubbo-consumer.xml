@@ -11,12 +11,15 @@
     <dubbo:application name="order-provider" owner="huhao"/>
 
     <!--dubbo这个服务所要暴露的服务地址所对应的注册中心-->
-    <dubbo:registry address="N/A"/>
-    
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <!-- 单点通信 -->
+    <!--<dubbo:registry address="N/A"/>-->
+
+    <!--dubbo这个服务所要暴露的服务地址所对应的注册中心-->
+    <!-- zookeeper通信 -->
+    <dubbo:registry protocol="zookeeper" address="39.107.31.208:2181,39.107.32.43:2181,47.95.39.176:2181"/>
 
     <!--生成一个远程服务的调用代理-->
-    <dubbo:reference id="orderServices" interface="com.dubbo.order.IOrderServices"
-    	url="dubbo://192.168.159.1:20880/com.dubbo.order.IOrderServices"/>
+    <dubbo:reference id="orderServices" interface="com.wolfman.dubbo.api.IHelloWorldService"
+    	url="dubbo://169.254.44.198:20880/com.wolfman.dubbo.api.IHelloWorldService"/>
 
 </beans>
