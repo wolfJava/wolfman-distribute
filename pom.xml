@@ -10,6 +10,7 @@
     <modules>
         <module>distribute-zookeeper</module>
         <module>distribute-dubbo</module>
+        <module>distribute-redis</module>
     </modules>
     <packaging>pom</packaging>
 
