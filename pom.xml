@@ -11,6 +11,7 @@
         <module>distribute-zookeeper</module>
         <module>distribute-dubbo</module>
         <module>distribute-redis</module>
+        <module>distribut-activeMQ</module>
     </modules>
     <packaging>pom</packaging>
 
