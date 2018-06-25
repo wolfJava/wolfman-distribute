@@ -14,11 +14,18 @@ public class JmsTopicSender {
             connection = connectionFactory.createConnection();
             connection.start();
             Session session = connection.createSession(true,Session.AUTO_ACKNOWLEDGE);
-            Destination destination = session.createTopic("bangpai");
+            Destination destination = session.createTopic("bangpai-xs");
             MessageProducer producer = session.createProducer(destination);
-            TextMessage textMessage = session.createTextMessage("新来了两个人");
-            producer.send(textMessage);
-            session.commit();
+            for (int i = 0; i < 10; i++) {
+                TextMessage textMessage = session.createTextMessage("新来了"+i+"个人");
+                producer.send(textMessage);
+            }
+
+//            TextMessage textMessage = session.createTextMessage("新来了3个人");
+//            producer.send(textMessage);
+
+
+//            session.commit();
             session.close();
         } catch (JMSException e) {
             e.printStackTrace();
