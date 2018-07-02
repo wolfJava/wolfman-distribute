@@ -13,6 +13,14 @@ public class JmsQueueSender {
 
         //step1.创建连接工厂
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://39.107.31.208:61616");
+
+       /* ActiveMQConnectionFactory connectionFactory =
+                new ActiveMQConnectionFactory("failover:(tcp://39.107.31.208:61616,tcp://39.107.32.43:61616)");
+*/
+
+
+
+
         Connection connection = null;
 
         try {

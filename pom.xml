@@ -12,6 +12,8 @@
         <module>distribute-dubbo</module>
         <module>distribute-redis</module>
         <module>distribut-activeMQ</module>
+        <module>concurrency</module>
+        <module>distribute-kafka</module>
     </modules>
     <packaging>pom</packaging>
 

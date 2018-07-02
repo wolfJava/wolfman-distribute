@@ -11,7 +11,11 @@ public class JmsQueueConsumer2 {
 
     public static void main(String[] args) {
         // step1.ConnectionFactory 连接工厂
-        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://39.107.31.208:61616");
+//        ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://39.107.31.208:61616");
+
+        ActiveMQConnectionFactory connectionFactory =
+                new ActiveMQConnectionFactory("failover:(tcp://39.107.31.208:61616,tcp://39.107.32.43:61616,tcp://47.95.39.176:61616)");
+
         Connection connection = null;
         try {
             //step2.封装客户端与JMS provider 之间的一个虚拟的连接
