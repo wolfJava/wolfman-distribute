@@ -14,6 +14,7 @@
         <module>distribut-activeMQ</module>
         <module>concurrency</module>
         <module>distribute-kafka</module>
+        <module>session-share-redis</module>
     </modules>
     <packaging>pom</packaging>
 
