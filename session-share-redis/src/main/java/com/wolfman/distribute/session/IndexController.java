@@ -1,5 +1,6 @@
 package com.wolfman.distribute.session;
 
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,7 @@ public class IndexController {
         String str = (String) request.getSession().getAttribute("huhao");
         return str;
     }
+
 
 
 }

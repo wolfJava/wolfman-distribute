@@ -53,8 +53,9 @@ public class MyKafkaConsumer extends ShutdownableThread {
     }
 
     public static void main(String[] args) {
-        MyKafkaConsumer consumer = new MyKafkaConsumer();
-        consumer.start();
+//        MyKafkaConsumer consumer = new MyKafkaConsumer();
+//        consumer.start();
+        System.out.println(Math.abs("wdd".hashCode())%50);
 
     }
 
