@@ -18,6 +18,7 @@ public class JmsTopicSender {
             MessageProducer producer = session.createProducer(destination);
             for (int i = 0; i < 10; i++) {
                 TextMessage textMessage = session.createTextMessage("新来了"+i+"个人");
+                textMessage.setJMSDeliveryMode(DeliveryMode.PERSISTENT);
                 producer.send(textMessage);
             }
 
