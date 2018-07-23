@@ -15,6 +15,7 @@
         <module>concurrency</module>
         <module>distribute-kafka</module>
         <module>session-share-redis</module>
+        <module>jvm</module>
     </modules>
     <packaging>pom</packaging>
 
