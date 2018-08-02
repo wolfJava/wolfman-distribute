@@ -2,8 +2,10 @@ package com.wolfman.jvm;
 
 public class Test2 {
 
+
     static {
-        System.out.println("静态初始化块执行了！");
+        System.out.println("我启动了！");
     }
+
 
 }
